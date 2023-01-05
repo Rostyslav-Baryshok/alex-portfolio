@@ -4,6 +4,14 @@
 
 @charset "UTF-8";
 
+@font-face {
+  font-family: icons;
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 [class*=_icon-]:before {
   font-family: "icons";
   font-style: normal;
@@ -17,6 +25,30 @@
 
 [class*=_icon-]:before {
   display: block;
+}
+
+._icon-instagram:before {
+  content: "\e900";
+}
+
+._icon-arrow:before {
+  content: "\e901";
+}
+
+._icon-link:before {
+  content: "\e902";
+}
+
+._icon-linkedin:before {
+  content: "\e903";
+}
+
+._icon-twitter:before {
+  content: "\e904";
+}
+
+._icon-github:before {
+  content: "\e905";
 }
 
 * {
@@ -156,6 +188,39 @@ h6 {
 [class*=-ibg_contain] img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.title__label {
+  font-size: 0.75rem;
+  line-height: 2;
+  letter-spacing: 0.625em;
+  color: #656d72;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.title__label::before {
+  content: "";
+  width: 1rem;
+  height: 0.125rem;
+  background-color: #d9d9d9;
+}
+
+.title__label:not(:last-child) {
+  margin-bottom: 0.75em;
+}
+
+.title__value {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.25;
+  color: #232e35;
 }
 
 /*
