@@ -7,8 +7,25 @@
     line-height: 2;
     letter-spacing: em(7.5, 12);
     color: $mainTwoColor;
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    &::before {
+      content: "";
+      width: rem(16);
+      height: rem(2);
+      background-color: $seconderyColor;
+    }
+    &:not(:last-child) {
+      margin-bottom: em(9, 12);
+    }
   }
   // .title__value
   &__value {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 700;
+    font-size: rem(36);
+    line-height: 1.25;
+    color: $mainColor;
   }
 }
