@@ -11,6 +11,10 @@
     align-items: center;
     justify-content: space-between;
     gap: rem(15);
+    min-height: 123px;
+    @media (max-width: $mobile) {
+      min-height: 50px;
+    }
   }
   // .header__logo
   &__logo {
@@ -20,6 +24,24 @@
   }
   // .header__button
   &__button {
+    font-size: rem(14);
+    line-height: math.div(17, 14);
+    border: rem(1) solid #f1f1f1;
+    border-radius: rem(8);
+    padding: rem(15) rem(24);
+    transition: border 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        border: rem(1) solid $accentColor;
+      }
+    }
+  }
+
+  // .header__actions
+  &__actions {
+    display: flex;
+    gap: rem(15);
+    align-items: center;
   }
 }
 .menu {
@@ -28,11 +50,18 @@
   }
   // .menu__body
   &__body {
+    @media (max-width: $mobile) {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   }
   // .menu__list
   &__list {
     display: flex;
-    @include adaptiveValue("gap", 56, 15, 0, 1200, 768);
+    flex-wrap: wrap;
+    row-gap: rem(5);
+    @include adaptiveValue("column-gap", 56, 15, 0, 1200, 768);
   }
   // .menu__item
   &__item {
@@ -63,6 +92,7 @@
     position: relative;
     width: rem(30);
     height: rem(18);
+    flex: 0 0 rem(30);
     cursor: pointer;
     z-index: 5;
     span,
